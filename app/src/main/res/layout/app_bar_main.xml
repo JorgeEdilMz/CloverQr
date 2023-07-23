@@ -19,7 +19,15 @@
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/Theme.CLOVERQR.PopupOverlay" />
 
-    <include layout="@layout/content_main" />
+    <Button
+        android:id="@+id/button"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:background="#953232"
+        android:backgroundTint="@color/black"
+        android:text="Jessica"
+        android:visibility="visible" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
