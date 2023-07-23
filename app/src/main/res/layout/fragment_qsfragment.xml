@@ -8,4 +8,12 @@
 
 
     tools:context=".qsfragment"
-    tools:visibility="visible"/>
+    tools:visibility="visible">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="#0E0E0E"
+        android:text="hola mundo" />
+</FrameLayout>
