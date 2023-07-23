@@ -16,6 +16,9 @@ public class HomeViewModel extends ViewModel {
     public LiveData<String> getText() {
         return mText;
     }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 653cf3f (Upload project)
 }

@@ -8,6 +8,7 @@
 
 
     tools:context=".qsfragment"
+<<<<<<< HEAD
     tools:visibility="visible">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -36,3 +37,6 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView2" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
+=======
+    tools:visibility="visible"/>
+>>>>>>> 653cf3f (Upload project)
