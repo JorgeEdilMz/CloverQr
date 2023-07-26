@@ -6,17 +6,197 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-    <TextView
-        android:id="@+id/text_home"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+
+    <Button
+        android:id="@+id/btn_heliconia"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="30dp"
+        android:textAlignment="viewEnd"
+        android:textDirection="firstStrongRtl"
+        app:icon="@android:drawable/ic_menu_gallery"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_baston"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/btn_orquidea"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:textAlignment="viewEnd"
+        android:textDirection="firstStrongRtl"
+        app:icon="@android:drawable/ic_menu_gallery"
+        app:layout_constraintBottom_toTopOf="@+id/txt_orquidea"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.396"
+        app:layout_constraintStart_toEndOf="@+id/btn_baston"
+        app:layout_constraintTop_toBottomOf="@+id/txt_cactus"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/btn_quiches"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="32dp"
+        android:textAlignment="viewEnd"
+        android:textDirection="firstStrongRtl"
+        app:icon="@android:drawable/ic_menu_gallery"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.534"
+        app:layout_constraintStart_toEndOf="@+id/btn_baston"
+        app:layout_constraintTop_toBottomOf="@+id/txt_orquidea"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/txt_quiches"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:fontFamily="@font/poppins_extralight"
+        android:text="QUICHES"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/txt_palmas"
+        app:layout_constraintTop_toBottomOf="@+id/btn_quiches"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/txt_palmas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="316dp"
+        android:fontFamily="@font/poppins_extralight"
+        android:text="PALMAS"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_baston"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_palmas"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="30dp"
+        android:textAlignment="viewEnd"
+        android:textDirection="firstStrongRtl"
+        app:icon="@android:drawable/ic_menu_gallery"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_heliconia"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/txt_heliconia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:fontFamily="@font/poppins_extralight"
+        android:text="HELICONIA"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_heliconia"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_baston"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="100dp"
+        android:textAlignment="viewEnd"
+        android:textDirection="firstStrongRtl"
+        app:icon="@android:drawable/ic_menu_gallery"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/txt_baston"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:fontFamily="@font/poppins_extralight"
+        android:text="BASTÓN"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_baston"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/txt_cactus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:fontFamily="@font/poppins_extralight"
+        android:text="CACTUS"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/txt_baston"
+        app:layout_constraintTop_toBottomOf="@+id/btn_cactus"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/txt_orquidea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="96dp"
+        android:fontFamily="@font/poppins_extralight"
+        android:text="ORQUÍDEA"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/txt_heliconia"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="413dp" />
+
+    <Button
+        android:id="@+id/btn_cactus"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="100dp"
+        android:textAlignment="viewEnd"
+        android:textDirection="firstStrongRtl"
+        app:icon="@android:drawable/ic_menu_gallery"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.396"
+        app:layout_constraintStart_toEndOf="@+id/btn_baston"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="CATEGORIAS"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="109dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
