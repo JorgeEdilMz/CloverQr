@@ -17,10 +17,15 @@
         android:label="Quienes somos"
         tools:layout="@layout/fragment_qsfragment" />
     <fragment
-        android:id="@+id/adminFragment"
-        android:name="com.clover.cloverqr.adminFragment"
-        android:label="Administrador"
-        tools:layout="@layout/fragment_admin" />
+        android:id="@+id/descriptionPlant"
+        android:name="com.clover.cloverqr.DescriptionPlant"
+        android:label="fragment_description_plant"
+        tools:layout="@layout/fragment_description_plant" />
+    <fragment
+        android:id="@+id/plantList"
+        android:name="com.clover.cloverqr.PlantList"
+        android:label="fragment_plant_list"
+        tools:layout="@layout/fragment_plant_list" />
 
 
 </navigation>
