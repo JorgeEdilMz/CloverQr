@@ -6,7 +6,7 @@
     app:startDestination="@+id/nav_home">
 
     <fragment
-        android:id="@+id/HomeFragment"
+        android:id="@+id/nav_home"
         android:name="com.clover.cloverqr.ui.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
@@ -16,16 +16,6 @@
         android:name="com.clover.cloverqr.qsfragment"
         android:label="Quienes somos"
         tools:layout="@layout/fragment_qsfragment" />
-    <fragment
-        android:id="@+id/descriptionPlant"
-        android:name="com.clover.cloverqr.DescriptionPlant"
-        android:label="fragment_description_plant"
-        tools:layout="@layout/fragment_description_plant" />
-    <fragment
-        android:id="@+id/plantList"
-        android:name="com.clover.cloverqr.PlantList"
-        android:label="fragment_plant_list"
-        tools:layout="@layout/fragment_plant_list" />
 
 
 </navigation>
