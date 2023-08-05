@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-<<<<<<< HEAD
 import android.widget.Button;
 
 import androidx.annotation.NonNull;
@@ -15,14 +14,6 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.clover.cloverqr.R;
 import com.clover.cloverqr.cactus_fragment;
-=======
-import android.widget.TextView;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
-
->>>>>>> 653cf3f (Upload project)
 import com.clover.cloverqr.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
@@ -37,7 +28,6 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-<<<<<<< HEAD
         // Obtener referencia al botón en el layout
         Button btnChangeFragment = root.findViewById(R.id.btn_cactus);
 
@@ -148,10 +138,6 @@ public class HomeFragment extends Fragment {
                         .commit();
             }
         });
-=======
-        final TextView textView = binding.textHome;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
->>>>>>> 653cf3f (Upload project)
         return root;
     }
 

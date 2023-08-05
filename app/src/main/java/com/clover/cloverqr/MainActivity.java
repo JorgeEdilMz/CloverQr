@@ -1,9 +1,6 @@
 package com.clover.cloverqr;
 
-<<<<<<< HEAD
 import android.content.Intent;
-=======
->>>>>>> 653cf3f (Upload project)
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
@@ -66,8 +63,5 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 653cf3f (Upload project)
 }
