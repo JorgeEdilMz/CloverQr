@@ -1,4 +1,4 @@
-package com.clover.cloverqr.ui.Fragment;
+package com.clover.cloverqr.ui.home;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

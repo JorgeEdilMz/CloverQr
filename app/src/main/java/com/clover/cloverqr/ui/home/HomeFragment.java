@@ -1,4 +1,4 @@
-package com.clover.cloverqr.ui.Fragment;
+package com.clover.cloverqr.ui.home;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,10 +8,12 @@ import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.clover.cloverqr.R;
-import com.clover.cloverqr.ui.Fragment.Cactus;
+import com.clover.cloverqr.cactus_fragment;
 import com.clover.cloverqr.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
@@ -34,7 +36,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // Crear e inicializar el fragmento que deseas mostrar
-                Fragment cactusFragment = new Cactus();
+                Fragment cactusFragment = new cactus_fragment();
 
                 // Reemplazar el fragmento actual (HomeFragment) con el nuevo fragmento (cactusFragment)
                 getParentFragmentManager().beginTransaction()
@@ -52,7 +54,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // Crear e inicializar el fragmento que deseas mostrar
-                Fragment cactusFragment = new Cactus();
+                Fragment cactusFragment = new cactus_fragment();
 
                 // Reemplazar el fragmento actual (HomeFragment) con el nuevo fragmento (cactusFragment)
                 getParentFragmentManager().beginTransaction()
@@ -70,7 +72,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // Crear e inicializar el fragmento que deseas mostrar
-                Fragment cactusFragment = new Cactus();
+                Fragment cactusFragment = new cactus_fragment();
 
                 // Reemplazar el fragmento actual (HomeFragment) con el nuevo fragmento (cactusFragment)
                 getParentFragmentManager().beginTransaction()
@@ -89,7 +91,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // Crear e inicializar el fragmento que deseas mostrar
-                Fragment cactusFragment = new Cactus();
+                Fragment cactusFragment = new cactus_fragment();
 
                 // Reemplazar el fragmento actual (HomeFragment) con el nuevo fragmento (cactusFragment)
                 getParentFragmentManager().beginTransaction()
@@ -108,7 +110,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // Crear e inicializar el fragmento que deseas mostrar
-                Fragment cactusFragment = new Cactus();
+                Fragment cactusFragment = new cactus_fragment();
 
                 // Reemplazar el fragmento actual (HomeFragment) con el nuevo fragmento (cactusFragment)
                 getParentFragmentManager().beginTransaction()
@@ -127,7 +129,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // Crear e inicializar el fragmento que deseas mostrar
-                Fragment cactusFragment = new Cactus();
+                Fragment cactusFragment = new cactus_fragment();
 
                 // Reemplazar el fragmento actual (HomeFragment) con el nuevo fragmento (cactusFragment)
                 getParentFragmentManager().beginTransaction()
