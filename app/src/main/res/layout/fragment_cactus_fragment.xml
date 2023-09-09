@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".cactus_fragment">
+    tools:context="cactus_fragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -19,5 +19,29 @@
             android:text="Lista de plantas"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".YourActivity">
+
+            <!-- Otros elementos en tu diseño -->
+
+            <Button
+                android:id="@+id/backButton"
+                android:layout_width="46dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="356dp"
+                android:layout_marginBottom="664dp"
+                app:icon="@mipmap/flecha"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        </RelativeLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

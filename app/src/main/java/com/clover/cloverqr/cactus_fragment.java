@@ -1,18 +1,12 @@
 package com.clover.cloverqr;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import androidx.fragment.app.Fragment;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link cactus_fragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class cactus_fragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -34,7 +28,7 @@ public class cactus_fragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment cactus_fragment.
+     * @return A new instance of fragment CactusFragment.
      */
     // TODO: Rename and change types and number of parameters
     public static cactus_fragment newInstance(String param1, String param2) {
@@ -47,18 +41,20 @@ public class cactus_fragment extends Fragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_cactus_fragment, container, false);
+
+        Button backButton = view.findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Acciones a realizar cuando se hace clic en el botón de retroceso
+            }
+        });
+
+        return view;
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cactus_fragment, container, false);
-    }
+    // Resto del código de la clase...
+
 }

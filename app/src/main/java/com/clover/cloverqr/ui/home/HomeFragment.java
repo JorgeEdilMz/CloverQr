@@ -36,11 +36,11 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // Crear e inicializar el fragmento que deseas mostrar
-                Fragment cactusFragment = new cactus_fragment();
+                Fragment cactus_fragment= new cactus_fragment();
 
                 // Reemplazar el fragmento actual (HomeFragment) con el nuevo fragmento (cactusFragment)
                 getParentFragmentManager().beginTransaction()
-                        .replace(R.id.nav_host_fragment_content_main, cactusFragment)
+                        .replace(R.id.nav_host_fragment_content_main, cactus_fragment)
                         .addToBackStack(null) // Agregar a la pila de retroceso para volver al fragmento anterior al presionar el botón "Atrás"
                         .commit();
             }
@@ -54,11 +54,11 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // Crear e inicializar el fragmento que deseas mostrar
-                Fragment cactusFragment = new cactus_fragment();
+                Fragment cactus_fragment = new cactus_fragment();
 
                 // Reemplazar el fragmento actual (HomeFragment) con el nuevo fragmento (cactusFragment)
                 getParentFragmentManager().beginTransaction()
-                        .replace(R.id.nav_host_fragment_content_main, cactusFragment)
+                        .replace(R.id.nav_host_fragment_content_main, cactus_fragment)
                         .addToBackStack(null) // Agregar a la pila de retroceso para volver al fragmento anterior al presionar el botón "Atrás"
                         .commit();
             }
