@@ -4,11 +4,15 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+
 import androidx.fragment.app.Fragment;
 
-public class
-cactus_fragment extends Fragment {
+/**
+ * A simple {@link Fragment} subclass.
+ * Use the {@link AdminFragment#newInstance} factory method to
+ * create an instance of this fragment.
+ */
+public class AdminFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -19,7 +23,7 @@ cactus_fragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public cactus_fragment() {
+    public AdminFragment() {
         // Required empty public constructor
     }
 
@@ -29,11 +33,11 @@ cactus_fragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment CactusFragment.
+     * @return A new instance of fragment AdminFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static cactus_fragment newInstance(String param1, String param2) {
-        cactus_fragment fragment = new cactus_fragment();
+    public static AdminFragment newInstance(String param1, String param2) {
+        AdminFragment fragment = new AdminFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -42,20 +46,18 @@ cactus_fragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_cactus_fragment, container, false);
-
-        Button backButton = view.findViewById(R.id.backButton);
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Acciones a realizar cuando se hace clic en el botón de retroceso
-            }
-        });
-
-        return view;
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
     }
 
-    // Resto del código de la clase...
-
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_admin, container, false);
+    }
 }

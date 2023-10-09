@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFF"
+    tools:context=".AdminFragment">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/windowBackground"
+        android:id="@+id/bar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:background="@color/purple_500">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:src="@drawable/ic_close"
+                    android:id="@+id/close"
+                    android:contentDescription="todo"
+                    tools:ignore="ContentDescription" />
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="#D3CFCF"
+            android:scaleType="centerInside"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_niimage"
+            android:id="@+id/image_added"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:hint="Titulo y descripcion de la obra"
+            android:maxLines="5"
+            android:id="@+id/descripcion"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="Selecciona una categoría"
+            android:textSize="22sp"
+            android:textColor="@color/black"
+            android:background="#D3CFCF"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <RadioGroup
+            android:id="@+id/radio_group_categories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/radio_button_cactus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pinturas"
+                android:textSize="18dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"/>
+
+            <RadioButton
+                android:id="@+id/radio_button_arboterum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dibujos"
+                android:textSize="18dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"/>
+
+            <RadioButton
+                android:id="@+id/radio_button_heliconias"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cerámicas"
+                android:textSize="18dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"/>
+
+            <RadioButton
+                android:id="@+id/radio_button_orquideas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Esculturas"
+                android:textSize="18dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="PUBLICAR"
+                android:id="@+id/post"
+                android:textSize="16sp"
+                android:layout_marginEnd="10dp"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:background="#D3CFCF"
+                android:textColor="@color/black"/>
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+</LinearLayout>

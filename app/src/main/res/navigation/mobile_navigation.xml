@@ -16,6 +16,11 @@
         android:name="com.clover.cloverqr.qsfragment"
         android:label="Quienes somos"
         tools:layout="@layout/fragment_qsfragment" />
+    <fragment
+        android:id="@+id/adminFragment"
+        android:name="com.clover.cloverqr.AdminFragment"
+        android:label="Administrador"
+        tools:layout="@layout/fragment_admin" />
 
 
 </navigation>

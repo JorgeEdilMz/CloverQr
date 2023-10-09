@@ -16,23 +16,32 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="166dp"
-            android:layout_height="138dp"
-            android:layout_marginStart="120dp"
-            android:layout_marginTop="150dp"
-            android:src="@mipmap/ic_launcher"
+            android:layout_width="174dp"
+            android:layout_height="185dp"
+            android:src="@mipmap/logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.258" />
 
         <TextView
             android:id="@+id/textView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="96dp"
-            android:layout_marginTop="36dp"
+            android:layout_width="342dp"
+            android:layout_height="335dp"
             android:fontFamily="@font/poppins_extralight"
-            android:text="Descripcion de quienes somos"
+            android:text="CLOVER QR es una  empresa creadora de aplicaciones  de base de datos con códigos QR, originada en el municipio de Garagoa-Boyacá a inicios del año 2023. Esta empresa se inicia con la idea de algunos alumnos de la Institución Educativa Técnica San Luis, aquellos que a partir de su conocimiento recibido por la técnica de Programación de Software, deciden formar una empresa para que las personas  tengan conocimiento sobre las plantas por medio de códigos QR,  que se encuentren  en los senderos ecológicos, bioparques, jardines botánicos o lugares naturales.
+"
+
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.492"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView2"
+            app:layout_constraintVertical_bias="0.454" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

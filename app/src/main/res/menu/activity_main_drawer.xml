@@ -7,12 +7,17 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@mipmap/planta"
-            android:title="Categorias" />
+            android:title="Categorías" />
 
         <item
             android:id="@+id/qsfragment"
             android:icon="@mipmap/conocimiento"
             android:title="Quiénes somos" />
+
+        <item
+            android:id="@+id/adminFragment"
+            android:icon="@mipmap/administrador"
+            android:title="Administrador" />
 
     </group>
 </menu>

@@ -23,18 +23,21 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="22dp"
-        android:layout_marginStart="88dp"
-        android:text="QUICHES"
+        android:text="BROMELIAS"
+        android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/textView7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.734"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_quiches" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="90dp"
+        android:layout_marginStart="88dp"
         android:text="PALMAS"
+        android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_palmas" />
@@ -80,10 +83,13 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="22dp"
-        android:layout_marginStart="64dp"
+        android:layout_marginStart="80dp"
         android:text="ORQUIDEAS"
+        android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.677"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_orquideas" />
 
     <TextView
@@ -92,6 +98,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="75dp"
         android:text="HELICONIAS"
+        android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_heliconias" />
@@ -128,6 +135,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="90dp"
         android:text="CACTUS"
+        android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_cactus" />
@@ -136,9 +144,13 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="22dp"
-        android:layout_marginStart="72dp"
+        android:layout_marginStart="96dp"
         android:text="ARBORETUM"
+        android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.642"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_bastones" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
