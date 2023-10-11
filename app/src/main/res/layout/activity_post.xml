@@ -13,32 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?android:attr/windowBackground"
-        android:id="@+id/bar">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="60sp"
-            android:background="@color/purple_500">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/close"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:contentDescription="@string/ic_close"
-                    android:src="@drawable/ic_close"
-                    tools:ignore="ContentDescription" />
-
-            </RelativeLayout>
-
-        </androidx.appcompat.widget.Toolbar>
-
-    </com.google.android.material.appbar.AppBarLayout>
+        android:id="@+id/bar"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -51,6 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_gravity="center"
+            android:layout_marginTop="20sp"
             android:background="#D3CFCF"
             android:scaleType="centerInside"
             android:src="@mipmap/conocimiento" />

@@ -5,7 +5,6 @@ import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -17,7 +16,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.clover.cloverqr.ui.home.HomeFragment;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -25,7 +24,6 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
-import com.theartofdev.edmodo.cropper.CropImage;
 
 import java.util.HashMap;
 import java.util.Objects;
@@ -33,40 +31,28 @@ import java.util.Objects;
 public class PostActivity extends AppCompatActivity {
 
     Uri imageUri;
-
-    String myUrl = "";
-    StorageTask uploadTask;
+    String myUri = "";
+    StorageTask<UploadTask.TaskSnapshot> uploadTask;
     StorageReference storageReference;
+
+    private static final int PICK_IMAGE_REQUEST = 1;
 
     ImageView close, image_Added;
     TextView post;
     EditText descripcion;
     RadioGroup radioGroupCategories;
 
-    private boolean isCropping = false;
-    private boolean isImageSelected = false;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post);
 
-
-        close = findViewById(R.id.close);
         image_Added = findViewById(R.id.image_added);
         post = findViewById(R.id.post);
         descripcion = findViewById(R.id.descripcion);
         radioGroupCategories = findViewById(R.id.radio_group_categories);
 
-        storageReference = FirebaseStorage.getInstance().getReference("plantas");
-
-        close.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(PostActivity.this, HomeFragment.class));
-                finish();
-            }
-        });
+        storageReference = FirebaseStorage.getInstance().getReference("Plantas");
 
         post.setOnClickListener(view -> {
             String category = getCategoryFromRadioGroup();
@@ -79,10 +65,24 @@ public class PostActivity extends AppCompatActivity {
         });
 
         image_Added.setOnClickListener(view -> openImagePicker());
+    }
 
-        CropImage.activity()
-                .setAspectRatio(1, 1)
-                .start(PostActivity.this);
+    private void openImagePicker() {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(intent, PICK_IMAGE_REQUEST);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
+            imageUri = data.getData();
+            // Configura la imagen seleccionada en tu ImageView o en cualquier otro lugar necesario.
+            // image_Added.setImageURI(imageUri);
+        }
     }
 
     private String getFileExtension(Uri uri) {
@@ -112,26 +112,32 @@ public class PostActivity extends AppCompatActivity {
                 return fileReference.getDownloadUrl();
             }).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
-                    Uri downloadUri = task.getResult();
-                    myUri = downloadUri.toString();
+                    fileReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            myUri = uri.toString();
 
-                    DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Posts");
+                            DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Posts");
 
-                    String postId = reference.push().getKey();
+                            String postId = reference.push().getKey();
 
-                    HashMap<String, Object> hashMap = new HashMap<>();
-                    hashMap.put("postid", postId);
-                    hashMap.put("postimage", myUri);
-                    hashMap.put("description", descripcion.getText().toString());
-                    hashMap.put("publisher", Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid());
-                    hashMap.put("category", category);
+                            HashMap<String, Object> hashMap = new HashMap<>();
+                            hashMap.put("postid", postId);
+                            hashMap.put("postimage", myUri);
+                            hashMap.put("description", descripcion.getText().toString());
+                            hashMap.put("publisher", Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid());
+                            hashMap.put("category", category);
 
-                    reference.child(postId).setValue(hashMap);
-
-                    progressDialog.dismiss();
-
-                    startActivity(new Intent(PostActivity.this, HomeFragment.class));
-                    finish();
+                            reference.child(postId).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    progressDialog.dismiss();
+                                    startActivity(new Intent(PostActivity.this, AdminFragment.class));
+                                    finish();
+                                }
+                            });
+                        }
+                    });
                 } else {
                     Toast.makeText(PostActivity.this, "Error", Toast.LENGTH_SHORT).show();
                 }
@@ -142,7 +148,6 @@ public class PostActivity extends AppCompatActivity {
     }
 
     // Método para obtener la categoría seleccionada del RadioGroup
-    @Nullable
     private String getCategoryFromRadioGroup() {
         int selectedId = radioGroupCategories.getCheckedRadioButtonId();
         if (selectedId != -1) {
@@ -150,29 +155,6 @@ public class PostActivity extends AppCompatActivity {
             return radioButton.getText().toString();
         } else {
             return null;
-        }
-    }
-
-
-    private void openImagePicker() {
-        CropImage.activity()
-                .setAspectRatio(1, 1)
-                .start(PostActivity.this);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
-            CropImage.ActivityResult result = CropImage.getActivityResult(data);
-            if (resultCode == RESULT_OK) {
-                imageUri = result.getUri();
-                image_Added.setImageURI(imageUri);
-            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
-                Exception error = result.getError();
-                Toast.makeText(this, "Error Recortando la Imagen: " + error.getMessage(), Toast.LENGTH_SHORT).show();
-            }
         }
     }
 }
