@@ -63,12 +63,22 @@ public class AdminFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_admin, container, false);
 
         Button BotonPublicar = view.findViewById(R.id.BotonPublicar);
+        Button BotonLogin = view.findViewById(R.id.BotonLogin);
 
         BotonPublicar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Abrir la actividad PostActivity.java
                 Intent intent = new Intent(getActivity(), PostActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        BotonLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getActivity(), AdminLogActivity.class);
                 startActivity(intent);
             }
         });

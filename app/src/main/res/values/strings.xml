@@ -14,4 +14,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment"></string>
     <string name="ic_close"></string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="ingresar">INGRESAR</string>
+    <string name="no_tienes_una_cuenta_registrate">¿No tienes una cuenta? Registrate</string>
+    <string name="correo">Correo</string>
 </resources>

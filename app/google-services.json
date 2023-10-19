@@ -1,13 +1,14 @@
 {
   "project_info": {
-    "project_number": "325373212732",
-    "project_id": "clover-773e0",
-    "storage_bucket": "clover-773e0.appspot.com"
+    "project_number": "1004222997540",
+    "firebase_url": "https://cloverqr-e5791-default-rtdb.firebaseio.com",
+    "project_id": "cloverqr-e5791",
+    "storage_bucket": "cloverqr-e5791.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:325373212732:android:dba3be27aa19a7dfc36b39",
+        "mobilesdk_app_id": "1:1004222997540:android:93b2a537811a73a5fce4b1",
         "android_client_info": {
           "package_name": "com.clover.cloverqr"
         }
@@ -15,7 +16,45 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCegfqCvzryiAjH-dOqUpUUyQktyfckg9s"
+          "current_key": "AIzaSyCfvVjxvMzrbPQ19YCxSL33URooIGn-wU8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1004222997540:android:be0c00b53a375d81fce4b1",
+        "android_client_info": {
+          "package_name": "com.cloverqr"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfvVjxvMzrbPQ19YCxSL33URooIGn-wU8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1004222997540:android:6f288282613edb99fce4b1",
+        "android_client_info": {
+          "package_name": "com.example.cloverqr"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfvVjxvMzrbPQ19YCxSL33URooIGn-wU8"
         }
       ],
       "services": {
