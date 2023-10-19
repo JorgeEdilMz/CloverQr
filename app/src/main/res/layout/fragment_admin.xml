@@ -39,26 +39,56 @@
 
         </androidx.appcompat.widget.Toolbar>
 
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="15sp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_admin" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Administrador"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp" />
+
+            <Button
+                android:id="@+id/BotonLogin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="INGRESAR" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="debe ingresar como administrador antes de poder publicar una nueva planta"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/BotonPublicar"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="250dp"
+                android:background="@drawable/ic_circle"
+                android:text="Subir Planta" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
     </com.google.android.material.appbar.AppBarLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:orientation="vertical">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Subir Planta"
-            android:id="@+id/BotonPublicar"/>
-
-        <Button
-            android:id="@+id/BotonLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="INGRESAR" />
-
-    </LinearLayout>
 
 </LinearLayout>
