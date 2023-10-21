@@ -38,7 +38,7 @@ public class PostActivity extends AppCompatActivity {
 
     ImageView close, image_Added;
     TextView post;
-    EditText descripcion;
+    EditText nombre, descripcion;
     RadioGroup radioGroupCategories;
 
     private boolean isCropping = false;
@@ -53,6 +53,7 @@ public class PostActivity extends AppCompatActivity {
         image_Added = findViewById(R.id.image_added);
         post = findViewById(R.id.post);
         descripcion = findViewById(R.id.descripcion);
+        nombre = findViewById(R.id.nombre);
         radioGroupCategories = findViewById(R.id.radio_group_categories);
 
         storageReference = FirebaseStorage.getInstance().getReference("Plantas");
@@ -126,6 +127,7 @@ public class PostActivity extends AppCompatActivity {
                     hashMap.put("postid", postId);
                     hashMap.put("postimage", myUri);
                     hashMap.put("description", descripcion.getText().toString());
+                    hashMap.put("nombre", nombre.getText().toString());
                     hashMap.put("publisher", Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid());
                     hashMap.put("category", category);
 
@@ -133,7 +135,7 @@ public class PostActivity extends AppCompatActivity {
 
                     progressDialog.dismiss();
 
-                    startActivity(new Intent(PostActivity.this, MainActivity.class));
+                    startActivity(new Intent(PostActivity.this, PostPlantaActivity.class));
                     finish();
                 } else {
                     Toast.makeText(PostActivity.this, "Error", Toast.LENGTH_SHORT).show();

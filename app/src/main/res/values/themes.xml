@@ -22,4 +22,8 @@
     <style name="Theme.CLOVERQR.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.CLOVERQR.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <!-- Base application theme. -->
+    <style name="Base.AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
+
+    </style>
 </resources>

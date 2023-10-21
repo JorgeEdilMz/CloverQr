@@ -18,34 +18,41 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:targetApi="31"><!-- Cambiado a tu estilo AppTheme -->
-
-
-    <!-- Actividad principal -->
-    <activity
-        android:name=".MainActivity"
-        android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
-
-    <activity
-            android:name=".PostActivity"
+        tools:targetApi="31">
+        <activity
+            android:name=".heliconias_fragment"
+            android:exported="false" />
+        <activity
+            android:name=".arboretum_fragment"
+            android:exported="false" />
+        <activity
+            android:name=".PostPlantaActivity"
+            android:exported="false"
+            android:label="@string/title_activity_post_planta"
+            android:theme="@style/AppTheme" /> <!-- Cambiado a tu estilo AppTheme -->
+        <!-- Actividad principal -->
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
-    </activity>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PostActivity"
+            android:exported="true" />
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
-        <activity android:name=".AdminLogActivity"
-                  android:exported="false">
+        <activity
+            android:name=".AdminLogActivity"
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-</application>
+    </application>
 
 </manifest>

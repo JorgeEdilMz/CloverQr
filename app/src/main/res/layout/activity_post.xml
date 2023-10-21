@@ -54,13 +54,23 @@
             android:scaleType="centerInside"
             android:src="@mipmap/conocimiento" />
 
+
+
+        <EditText
+            android:id="@+id/nombre"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:hint="Nombre de la planta"
+            android:maxLines="5"/>
         <EditText
             android:id="@+id/descripcion"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="10dp"
-            android:hint="Nombre y descripción de la planta"
+            android:hint="Descripción de la planta"
             android:maxLines="5"/>
 
         <RadioGroup
