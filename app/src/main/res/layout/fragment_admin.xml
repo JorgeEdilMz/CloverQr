@@ -78,14 +78,6 @@
                 android:hint="debe ingresar como administrador antes de poder publicar una nueva planta"
                 android:textAlignment="center" />
 
-            <Button
-                android:id="@+id/BotonPublicar"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="250dp"
-                android:background="@drawable/ic_circle"
-                android:text="Subir Planta" />
-
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

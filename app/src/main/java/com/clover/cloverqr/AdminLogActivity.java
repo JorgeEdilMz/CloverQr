@@ -90,7 +90,8 @@ public class AdminLogActivity extends AppCompatActivity {
                                                     // Guarda el token de autenticación en las preferencias compartidas
                                                     saveUserToken(userToken);
 
-                                                    // No redirigir aquí, permitir que el usuario permanezca en AdminLogActivity
+                                                    startActivity(new Intent(AdminLogActivity.this, PostPlantaActivity.class));
+                                                    finish();
                                                     Toast.makeText(AdminLogActivity.this, "Hola! Bienvenido(a) " + user.getEmail(), Toast.LENGTH_SHORT).show();
                                                     finish(); // Esto cerrará la actividad si lo deseas
                                                 } else {
