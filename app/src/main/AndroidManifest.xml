@@ -20,6 +20,18 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
+            android:name=".Fragment.PlantaDetailInfoFragment"
+            android:exported="false" />
+        <activity
+            android:name=".bromelias_fragment"
+            android:exported="false" />
+        <activity
+            android:name=".palmas_fragment"
+            android:exported="false" />
+        <activity
+            android:name=".orquideas_fragment"
+            android:exported="false" />
+        <activity
             android:name=".heliconias_fragment"
             android:exported="false" />
         <activity

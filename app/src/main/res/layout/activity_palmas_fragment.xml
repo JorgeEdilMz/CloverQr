@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="arboretum_fragment">
+    tools:context="palmas_fragment">
 
     <!-- Contenedor del fragmento -->
     <FrameLayout
@@ -78,7 +78,7 @@
 
     <!-- RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_arboretum"
+        android:id="@+id/recycler_view_palmas"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/toolbar"

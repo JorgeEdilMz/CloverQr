@@ -13,9 +13,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-
-import com.international.magic4rt.R;
-
 public class CategoriesFragment extends Fragment {
 
     private Button Cactus;
@@ -61,21 +58,21 @@ public class CategoriesFragment extends Fragment {
         Orquideas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loadFragment(new EsculturasCategoriesFragment());
+                loadFragment(new orquideas_fragment());
             }
         });
 
         Palmas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loadFragment(new EsculturasCategoriesFragment());
+                loadFragment(new palmas_fragment());
             }
         });
 
         Bromelias.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loadFragment(new EsculturasCategoriesFragment());
+                loadFragment(new bromelias_fragment());
             }
         });
 

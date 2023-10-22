@@ -1,5 +1,12 @@
 package com.clover.cloverqr;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -11,15 +18,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.clover.cloverqr.Model.Planta;
 import com.clover.cloverqr.Adapter.PlantaAdapter;
+import com.clover.cloverqr.Model.Planta;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -30,24 +30,24 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class cactus_fragment extends Fragment {
+public class orquideas_fragment extends Fragment {
 
     private RecyclerView recyclerView;
     private PlantaAdapter postAdapter;
     private List<Planta> postList;
     EditText search_bar;
-    private String category = "Cactus"; // Categoría correspondiente
+    private String category = "Orquideas"; // Categoría correspondiente
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_cactus_fragment, container, false);
+        View view = inflater.inflate(R.layout.activity_orquideas_fragment, container, false);
 
         Button arrowNewsButton = view.findViewById(R.id.ArrowNews);
 
         search_bar = view.findViewById(R.id.search_bar);
 
-        recyclerView = view.findViewById(R.id.recycler_view_cactus);
+        recyclerView = view.findViewById(R.id.recycler_view_orquideas);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 

@@ -3,15 +3,15 @@ package com.clover.cloverqr.Model;
 public class Planta {
         private String postid;
         private String postimage;
-        private String descripcion;
+        private String description;
         private String publisher;
         private String nombre;
         private String category;
 
-        public Planta (String postid, String postimage, String descripcion, String publisher, String nombre) {
+        public Planta (String postid, String postimage, String description, String publisher, String nombre) {
             this.postid = postid;
             this.postimage = postimage;
-            this.descripcion = descripcion;
+            this.description = description;
             this.publisher = publisher;
             this.nombre = nombre;
         }
@@ -32,12 +32,12 @@ public class Planta {
         this.postimage = postimage;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getPublisher() {

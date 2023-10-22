@@ -11,8 +11,13 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.clover.cloverqr.R;
+import com.clover.cloverqr.arboretum_fragment;
+import com.clover.cloverqr.bromelias_fragment;
 import com.clover.cloverqr.cactus_fragment;
 import com.clover.cloverqr.databinding.FragmentHomeBinding;
+import com.clover.cloverqr.heliconias_fragment;
+import com.clover.cloverqr.orquideas_fragment;
+import com.clover.cloverqr.palmas_fragment;
 
 public class HomeFragment extends Fragment {
 
@@ -25,10 +30,9 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        // Obtener referencia al botón en el layout
+
         Button btnChangeFragment = root.findViewById(R.id.btn_cactus);
 
-        // Establecer el click listener para el botón
         btnChangeFragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,7 +55,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // Crear e inicializar el fragmento que deseas mostrar
-                Fragment cactus_fragment = new cactus_fragment();
+                Fragment cactus_fragment = new arboretum_fragment();
 
                 // Reemplazar el fragmento actual (HomeFragment) con el nuevo fragmento (cactusFragment)
                 getParentFragmentManager().beginTransaction()
@@ -69,7 +73,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // Crear e inicializar el fragmento que deseas mostrar
-                Fragment cactusFragment = new cactus_fragment();
+                Fragment cactusFragment = new heliconias_fragment();
 
                 // Reemplazar el fragmento actual (HomeFragment) con el nuevo fragmento (cactusFragment)
                 getParentFragmentManager().beginTransaction()
@@ -88,7 +92,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // Crear e inicializar el fragmento que deseas mostrar
-                Fragment cactusFragment = new cactus_fragment();
+                Fragment cactusFragment = new orquideas_fragment();
 
                 // Reemplazar el fragmento actual (HomeFragment) con el nuevo fragmento (cactusFragment)
                 getParentFragmentManager().beginTransaction()
@@ -107,7 +111,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // Crear e inicializar el fragmento que deseas mostrar
-                Fragment cactusFragment = new cactus_fragment();
+                Fragment cactusFragment = new palmas_fragment();
 
                 // Reemplazar el fragmento actual (HomeFragment) con el nuevo fragmento (cactusFragment)
                 getParentFragmentManager().beginTransaction()
@@ -126,7 +130,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // Crear e inicializar el fragmento que deseas mostrar
-                Fragment cactusFragment = new cactus_fragment();
+                Fragment cactusFragment = new bromelias_fragment();
 
                 // Reemplazar el fragmento actual (HomeFragment) con el nuevo fragmento (cactusFragment)
                 getParentFragmentManager().beginTransaction()

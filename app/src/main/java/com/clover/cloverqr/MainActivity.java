@@ -12,13 +12,21 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.clover.cloverqr.databinding.ActivityMainBinding;
+import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
+    private AppBarLayout appBar;
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
+
+    public void hideAppBar() {
+        if (appBar != null) {
+            appBar.setExpanded(false, false);
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

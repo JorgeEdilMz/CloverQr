@@ -3,13 +3,19 @@ package com.clover.cloverqr;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.clover.cloverqr.Adapter.PlantaAdapter;
@@ -18,6 +24,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -26,58 +33,115 @@ import java.util.List;
 public class arboretum_fragment extends Fragment {
 
     private RecyclerView recyclerView;
-    private PlantaAdapter plantaAdapter;
-    private List<Planta> plantaList;
+    private PlantaAdapter postAdapter;
+    private List<Planta> postList;
+    EditText search_bar;
+    private String category = "Arboretum"; // Categoría correspondiente
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_arboretum_fragment, container, false);
+
+        Button arrowNewsButton = view.findViewById(R.id.ArrowNews);
+
+        search_bar = view.findViewById(R.id.search_bar);
 
         recyclerView = view.findViewById(R.id.recycler_view_arboretum);
         recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
-        linearLayoutManager.setReverseLayout(true);
-        linearLayoutManager.setStackFromEnd(true);
-        recyclerView.setLayoutManager(linearLayoutManager);
-
-        plantaList = new ArrayList<>();
-        plantaAdapter = new PlantaAdapter(getContext(), plantaList);
-        recyclerView.setAdapter(plantaAdapter);
-
+        postList = new ArrayList<>();
+        postAdapter = new PlantaAdapter(getContext(), postList);
+        recyclerView.setAdapter(postAdapter);
 
         readPosts();
 
-        ImageView arrowNews = view.findViewById(R.id.ArrowNews);
-        arrowNews.setOnClickListener(new View.OnClickListener() {
+        arrowNewsButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                getActivity().onBackPressed();
+            public void onClick(View v) {
+                // Obtiene el FragmentManager de la actividad principal
+                FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+                // Realiza la acción "back press" para volver al fragmento anterior
+                fragmentManager.popBackStack();
             }
         });
+        search_bar.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                searchPlantas(charSequence.toString().toLowerCase());
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
 
         return view;
     }
 
+
+
     private void readPosts() {
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Plantas");
-
-        reference.addValueEventListener(new ValueEventListener() {
+        Query query = reference.orderByChild("category").equalTo(category);
+        query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                plantaList.clear();
+                postList.clear();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    Planta planta = snapshot.getValue(Planta.class);
-                    if (planta != null && planta.getPublisher() != null) {
-                        plantaList.add(planta);
-                    }
+                    Planta post = snapshot.getValue(Planta.class);
+                    postList.add(post);
                 }
-                plantaAdapter.notifyDataSetChanged();
+                postAdapter.notifyDataSetChanged();
+
+                Log.d("CactusCategories", "readPosts: Data retrieved successfully. Post count: " + postList.size());
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                // Manejo de errores en caso de que ocurra algún problema con la lectura de datos
+                Log.e("CactusCategories", "readPosts: Error retrieving data from Firebase: " + error.getMessage());
+            }
+        });
+    }
+    private void searchPlantas(String s) {
+        String searchQuery = s.toLowerCase();
+        Query query = FirebaseDatabase.getInstance().getReference("Plantas")
+                .orderByChild("nombre")
+                .startAfter(s)
+                .endAt(searchQuery + "\uf8ff");
+
+        Query categoryQuery = FirebaseDatabase.getInstance().getReference("Plantas")
+                .orderByChild("category")
+                .equalTo(category);
+
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                List<Planta> filteredList = new ArrayList<>();
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    Planta planta = snapshot.getValue(Planta.class);
+                    if (planta.getCategory().equals(category)) {
+
+
+                        filteredList.add(planta);
+                    }
+                }
+                postList.clear();
+                postList.addAll(filteredList);
+                postAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                // Maneja errores, si es necesario
             }
         });
     }
